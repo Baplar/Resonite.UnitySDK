@@ -1,0 +1,50 @@
+name: 'Build SDK package'
+
+on:
+  workflow_dispatch:
+  release:
+    types:
+      - published
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+
+    name: 'Build SDK package'
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: 'Checkout repository'
+        uses: actions/checkout@v6
+        with:
+          lfs: 'true'
+
+      - name: 'Build zip'
+        run: cd Packages && zip -r ../Builds/ResoniteSDK.zip com.yellowdogman.resonite.unitysdk
+  
+      - name: 'Build tarball'
+        run: cd Packages/com.yellowdogman.resonite.unitysdk && tar czf ../../Builds/ResoniteSDK.tgz *
+  
+      - name: 'Upload zip'
+        uses: actions/upload-artifact@v7
+        with:
+          name: 'Resonite.UnitySDK.zip'
+          path: Builds/ResoniteSDK.zip
+          archive: false
+
+      - name: 'Upload tarball'
+        uses: actions/upload-artifact@v7
+        with:
+          name: 'Resonite.UnitySDK.tgz'
+          path: Builds/ResoniteSDK.tgz
+          archive: false
+
+      - name: 'Publish package to release if any.'
+        if: ${{ github.event_name == 'release' && github.event.action == 'published' }}
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            Builds/ResoniteSDK.zip
+            Builds/ResoniteSDK.tgz

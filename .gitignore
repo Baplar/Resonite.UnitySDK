@@ -20,6 +20,7 @@
 Assembly-CSharp-Editor.csproj
 Assembly-CSharp.csproj
 Resonite.UnitySDK.sln
+YellowDogMan.ResoniteSDK.csproj
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data

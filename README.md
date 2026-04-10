@@ -35,30 +35,42 @@ You can:
 - Use Resonite to visualize and prototype your Unity projects in VR and take advantage of Resonite's realtime collaboration
 - Expand the SDK or use it as reference implementation for your own custom tooling for other engines
 
+### Installing the Resonite SDK
+
+### From GitHub URL
+1) Open or create your Unity project
+2) In Unity Editor -> Window -> Package Manager, click the "+" icon on the top left, and select "Add package from git URL..."
+3) In the URL field, enter `https://github.com/Yellow-Dog-Man/Resonite.UnitySDK.git?path=/Packages/com.yellowdogman.resonite.unitysdk`, then click "Add" to install it.
+
+### From zip file
+1) Go to [Releases](https://github.com/Yellow-Dog-Man/Resonite.UnitySDK/releases)
+2) Download ResoniteSDK.zip for the latest release, and extract it in the location of your choice.
+3) Open or create your Unity project.
+4) In Unity Editor -> Window -> Package Manager, click the "+" icon on the top left, and select "Add package from local folder..."
+5) Navigate to the extracted folder and select the file `package.json`, then confirm to install it.
+
+### From tarball
+1) Go to [Releases](https://github.com/Yellow-Dog-Man/Resonite.UnitySDK/releases)
+2) Download `ResoniteSDK.tgz` for the latest release.
+3) Open or create your Unity project.
+4) In Unity Editor -> Window -> Package Manager, click the "+" icon on the top left, and select "Add package from tarball..."
+5) Select the downloaded `ResoniteSDK.tgz`, then confirm to install it.
+
 ## Getting started
 Video tutorial:
 
 [![Resonite SDK for Unity Editor](https://img.youtube.com/vi/lRGDnu9OeSs/0.jpg)](https://www.youtube.com/watch?v=lRGDnu9OeSs)
 
-> [!IMPORTANT]
-> If you are installing a new version of the Unity SDK to a project containing older version **delete the older version first!** Otherwise some old files can cause conflicts and errors.
-> 
-> In order words: **Delete old ResoniteSDK in your project before importing a new one**
-
-1) Go to [Releases](https://github.com/Yellow-Dog-Man/Resonite.UnitySDK/releases)
-2) Download ResoniteSDK.unitypackage for the latest release
-    - Note: We'll likely switch to Unity Package Manager soon(ish)
-3) Import the package into your Unity project
-4) Go to Resonite SDK in Unity Editor -> Open Resonite SDK Manager to open Resonite SDK window
-6) Run Resonite (make sure you got latest version)
-7) Create a new world (Blank template is recommended for converting worlds)
-8) Go to Session on dash and click "Enable Resonite Link"
-9) Go back to Unity Editor and the Resonite SDK window
-10) The session should appear under "AutoDiscovery" mode - click the connect button
-    - If it does not appear, you can switch to Manual mode and enter the port manually
-11) If you're converting an avatar, uncheck "Convert Skybox"
-12) Click either "Send Current Scene" or "Start Realtime Mode"
-    - Realtime mode will translate the changes in Editor right as you make them
+1) Go to Resonite SDK in Unity Editor -> Open Resonite SDK Manager to open Resonite SDK window
+2) Run Resonite (make sure you got latest version)
+3) Create a new world (Blank template is recommended for converting worlds)
+4) Go to Session on dash and click "Enable Resonite Link"
+5) Go back to Unity Editor and the Resonite SDK window
+6) The session should appear under "AutoDiscovery" mode - click the connect button
+   - If it does not appear, you can switch to Manual mode and enter the port manually
+7) If you're converting an avatar, uncheck "Convert Skybox"
+8) Click either "Send Current Scene" or "Start Realtime Mode"
+   - Realtime mode will translate the changes in Editor right as you make them
    
 ### How to convert an avatar
 Converting avatar generally follows the same process.
